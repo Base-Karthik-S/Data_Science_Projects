@@ -7,7 +7,7 @@
 
 ## File Explanation
 - The main analysis file is Telco_Customer_Churn_Analysis.ipynb
-- The final visualization is in Visualization.slides.html (you can download it to see the result in slides.)
+- The final visualizations are presented in Visualization.ipynb 
 
 ## Limitations
 
