@@ -1,79 +1,47 @@
-# Telco Customer Churn Prediction
-
-## Overview
-
-This project aims to predict customer churn for a subscription-based business using machine learning. It involves data collection, data preprocessing, feature engineering, model selection, and model training to build a predictive model.
-
-## Project Structure
-
-The project is organized into the following sections:
-
-1. **Data Collection**: In this section, we collect and load the Telco Customer Churn dataset.
-
-2. **Data Preprocessing**: Data preprocessing includes handling missing values, encoding categorical variables, and feature engineering.
-
-3. **Model Selection**: We choose a machine learning model (Random Forest Classifier) for the task.
-
-4. **Model Training**: The selected model is trained on the preprocessed data.
-
-5. **Model Evaluation**: We evaluate the model's performance using accuracy, a confusion matrix, and a classification report.
-
-6. **Feature Importance Analysis**: We analyze the importance of features in the model's predictions and visualize the results.
-
-7. **Visualizations**: The project includes various data visualizations to gain insights into the dataset.
-
-## Prerequisites
-
-- Python (3.6 or higher)
-- Jupyter Notebook
-- Libraries: pandas, numpy, scikit-learn, matplotlib, seaborn (You can install these using pip)
-
-## Usage
-
-1. Clone the repository to your local machine:
-
-   ```bash
-   git clone https://github.com/Base-Karthik-S/Telco-Customer-Churn-Prediction.git
-
-2. Open the Jupyter Notebook file Telco_Customer_Churn.ipynb to run the project interactively.
-
-3. Follow the cells in the notebook to perform data preprocessing, model training, evaluation,
-   and analysis.
-
-4. Customize the code and visuals as needed for your specific use case.
+# Telco_Customer_Churn_Analysis
+## by Karthik S
 
 ## Dataset
 
-The dataset used in this project is the "Telco Customer Churn" dataset, which includes the following columns:
+> "Predict behavior to retain customers. You can analyze all relevant customer data and develop focused customer retention programs."<br/> [IBM Sample Data Sets] https://www.kaggle.com/blastchar/telco-customer-churn<br/> Each row represents a customer, each column contains customer’s attributes described on the column Metadata. The raw data contains 7043 rows (customers) and 21 columns (features).<br/> The “Churn” column is our target.
 
-- `customerID`
-- `gender`
-- `SeniorCitizen`
-- `Partner`
-- `Dependents`
-- `tenure`
-- `PhoneService`
-- `MultipleLines`
-- `InternetService`
-- `OnlineSecurity`
-- `OnlineBackup`
-- `DeviceProtection`
-- `TechSupport`
-- `StreamingTV`
-- `StreamingMovies`
-- `Contract`
-- `PaperlessBilling`
-- `PaymentMethod`
-- `MonthlyCharges`
-- `TotalCharges`
-- `Churn` (Target Variable: Yes/No)
+## File Explanation
+- The main analysis file is Telco_Customer_Churn_Analysis.ipynb
+- The final visualization is in Visualization.slides.html (you can download it to see the result in slides.)
+
+## Limitations
+
+> Limitation 1 : In this dataset, we can only see one type of each variables instead of real world situation of changing different options as time passes, e.g., in real world, people might wanna try streaming service, but they might change their mind to leave the service next month. 
+
+> Limitation 2 : We cannot only see these variables as whole factors to understand the exact reasons why customers left because they might leave for better price offered by competitors or the bad economy in certian time, etc. We also cannot see the time they leaked, so it's hard to infer those external situation.
+
+## Key Insights for Presentation
+
+> 1. The average LTV of 80% of those who unsubscribed is 750 dollars. On the other hand, the average LTV of top 20% of those who unsubscribed is 4750 dollars. And the ratio by the sum of total LTV by each groups is 750*4 : 4750 = 1 : 1.6, **which suggests we should focus on serving those 20% customers with high LTV**, which brought 60%(1.6/2.6) of our revenue from leaked customers
+
+> 2. 80%(low LTV) of leaked customers only stayed under 10 months.
+
+> 3. In 80%(low LTV) of leaked customers, only 5% of them used internet service.
+
+> 4. 81% of those who have and had stayed for more than 50 months tends to use multiple lines.
+
+> 5. 100% of those who brought 20% of extremely high LTV used and are using internet service.
+
+> 6. In 80% of data of current customers, all the subsets of internet services are equally used by 40% of people.
+Except for 80% of data of current customers, in the rest of the data, streaming movies and streaming TV are two top subsets of internet service people use, and device protection and online backup are the second place, and tech support and online security are both third place, the gaps between places are near 10% of whole data except for 80% of current customers.
+
+> 7. In 80% of current customers, those whose LTV are more than the average LTV of 80% of leaked customers are 10% more likely to use multiple lines and internet service than the average 80% of current customers.
+
+> 8. 89% of those who leaked used monthly contract, while only 42% of current customers are using monthly contract.
+
+> 9. Whether people use internet service is the most important factor to create high LTV, and yearly contract is second place.
+
+> 10. Among all the subsets of internet services, online backup is the most important factor to create high LTV
 
 ## License
 
 This project is open-source and is made available under the MIT License. You are encouraged to use and modify the code and content as needed, in accordance with the MIT License terms.
 
 ## Acknowledgments
-
-The dataset used in this project is sourced from Kaggle: [Telco Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn). Special thanks to the data providers and the Kaggle community.
 
 Feel free to adapt and expand upon this README to provide additional information about the project, its objectives, and how to utilize it effectively.
